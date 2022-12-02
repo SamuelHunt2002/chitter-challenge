@@ -3,7 +3,6 @@ require "sinatra/reloader"
 require_relative "lib/post_repository"
 require_relative "lib/user_repository"
 require_relative "lib/database_connection"
-require "sequel"
 
 DatabaseConnection.connect("Chitter")
 
