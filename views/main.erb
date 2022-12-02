@@ -3,7 +3,13 @@
 <body>
 <h2>Welcome to Chitter</h2>
 <a href="/post"> <button>Make a post!</button> </a>
+
+<%if session[:user_id] != nil %>
 <a href="/logout"><button>Log Out</button></a>
+<%else%>
+<a href="/signup"><button>Sign up</button></a>
+<a href="/login"><button>Log In</button></a>
+<%end%>
 <%@posts.sort_by{|obj| obj.post_time}.reverse.each do |post| %>
 <p> <%=post.content%> by <%=post.username%>, posted at <%=(DateTime.parse(post.post_time)).strftime('%m/%d/%Y')%> </p> 
 <br>
