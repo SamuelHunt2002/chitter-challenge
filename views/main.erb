@@ -25,7 +25,7 @@
 
 <% @posts.sort_by { |obj| obj.post_time }.reverse.each do |post| %>
 <div class="box"> <p> <%= post.content %> </p> <br> 
-<p><i> by <%= post.username %>, posted at <%= (DateTime.parse(post.post_time)).strftime("%m/%d/%Y") %> </i> </p> </div>
+<p><i> by <%= post.username %>, posted at <%= (DateTime.parse(post.post_time)).strftime("%d/%m/%Y") %> </i> </p> </div>
 <br>
 <% end %>
 
