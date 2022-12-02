@@ -33,4 +33,19 @@ describe UserRepository do
     all_users = user_repo.all
     expect(all_users.length).to eq 5
   end
+
+  it "Finds by username returns nil if incorrect username" do
+    user_repo = UserRepository.new()
+    expect(user_repo.find_by_username("adafda")).to eq nil
+  end
+
+  it "Finds by username returns a user if correct username" do
+    user_repo = UserRepository.new()
+    expect(user_repo.find_by_username("Sam123")).to_not eq nil
+  end
+
+  it "Log in returns true if I have the right pass" do
+    user_repo = UserRepository.new()
+    expect(user_repo.sign_in("Sam123","password")).to eq true 
+  end
 end

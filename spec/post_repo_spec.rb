@@ -1,5 +1,6 @@
 require 'post'
 require 'post_repository'
+require 'user_post'
 
 def reset_albums_table
   seed_sql = File.read('spec/seeds.sql')
@@ -32,7 +33,13 @@ describe PostRepository do
     expect(all_posts.length).to eq 4
   end
 
-
+  it "userpost" do
+    post_repo = PostRepository.new
+    all_posts = post_repo.all_with_poster
+    expect(all_posts.length).to eq 3 
+    expect(all_posts.first.content).to eq "This should work"
+    expect(all_posts.first.username).to eq "Sam123"
+  end
 
 
 end 

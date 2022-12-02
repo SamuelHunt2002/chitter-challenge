@@ -1,0 +1,13 @@
+<html>
+<head> </head>
+<body>
+<h2>Welcome to Chitter</h2>
+<a href="/post"> <button>Make a post!</button> </a>
+<a href="/logout"><button>Log Out</button></a>
+<%@posts.sort_by{|obj| obj.post_time}.reverse.each do |post| %>
+<p> <%=post.content%> by <%=post.username%>, posted at <%=(DateTime.parse(post.post_time)).strftime('%m/%d/%Y')%> </p> 
+<br>
+<%end%>
+
+ </body>
+</html>
