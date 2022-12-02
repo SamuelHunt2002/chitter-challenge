@@ -4,7 +4,7 @@ require_relative "lib/post_repository"
 require_relative "lib/user_repository"
 require_relative "lib/database_connection"
 
-DatabaseConnection.connect("Chitter")
+DatabaseConnection.connect()
 
 class Application < Sinatra::Base
   # This allows the app code to refresh
