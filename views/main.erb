@@ -1,19 +1,33 @@
+<!DOCTYPE html>
 <html>
-<head> </head>
+<head> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"> <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 <body>
-<h2>Welcome to Chitter</h2>
-<a href="/post"> <button>Make a post!</button> </a>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/main">
+      <h2 class="title is-3">SamBook</h2>
+    </a>
+    <a class="navbar-item", href="/post">
+        Make A Sam!
+      </a>
+      <% if session[:user_id] != nil %>
+<a class="navbar-item" href="/logout">Log Out</a>
+<% else %>
+<a class="navbar-item" href="/signup">Sign up</a>
+<a class="navbar-item" href="/login">Log In</a>
+<% end %>
+  </div>
+  </div>
+</nav>
 
-<%if session[:user_id] != nil %>
-<a href="/logout"><button>Log Out</button></a>
-<%else%>
-<a href="/signup"><button>Sign up</button></a>
-<a href="/login"><button>Log In</button></a>
-<%end%>
-<%@posts.sort_by{|obj| obj.post_time}.reverse.each do |post| %>
-<p> <%=post.content%> by <%=post.username%>, posted at <%=(DateTime.parse(post.post_time)).strftime('%m/%d/%Y')%> </p> 
+<% @posts.sort_by { |obj| obj.post_time }.reverse.each do |post| %>
+<div class="box"> <p> <%= post.content %> </p> <br> 
+<p><i> by <%= post.username %>, posted at <%= (DateTime.parse(post.post_time)).strftime("%m/%d/%Y") %> </i> </p> </div>
 <br>
-<%end%>
+<% end %>
 
  </body>
 </html>

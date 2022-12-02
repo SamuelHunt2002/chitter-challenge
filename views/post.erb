@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-  <head>
-  </head>
+<html>
+<head> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"> <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
   <body>
-	<h3>POST</h3>
+	<h3 class="title is-3">Post a Sam</h3>
     <form action="/post" method="POST">
-<label for="content"> Content</label>
-<input type="text" name="content">
-<input type="submit" value="Post!">
+<div class="message-body">
+<input class="input is-medium", type="text" name="content" placeholder="Content">
+</div>
+<input class="button is-primary is-light" type="submit" value="Post!">
   </body>
 </html>

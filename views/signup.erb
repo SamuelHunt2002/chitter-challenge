@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-  <head>
-  </head>
+<html>
+<head> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"> <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
   <body>
-	<h3>Sign up for Chitter</h3>
+	<h3 class="title is-3">Sign up for SamBook</h3>
     <form action="/signup" method="POST">
-<label for="username"> username</label>
+<label for="username"> Username: </label>
 <input type="text" name="username">
 <label for="pass"> Password</label>
 <input type="text" name="pass">
@@ -12,6 +13,7 @@
 <input type="text" name="first_name">
 <label for="username"> Last Name</label>
 <input type="text" name="last_name">
-<input type="submit" value="Sign up!">
+<br> <br>
+<input class="button is-primary is-light", type="submit" value="Sign up!">
   </body>
 </html>
